@@ -11,7 +11,6 @@ jobs:
         env: 
           TITLE: ${{ github.event.issue.title }} # this works, because the title variable is evaluated here (as a string) and used outside of the below shell
         run: |
-#         issue_title="${{ github.event.issue.title }}" # putting title in env lets me remove it from here
           if [[ "$TITLE" == *"bug"* ]]; then # $issue_title becomes the $TITLE variable
           echo "Issue is about a bug!"
           else
